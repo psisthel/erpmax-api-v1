@@ -1,0 +1,27 @@
+[13-Jul-2021 15:17:21 UTC] PHP Parse error:  syntax error, unexpected ':', expecting ')' in /home/sisthel/public_html/demo.sisthel.pe/api/v1/customer_filter/clients.php on line 8
+[13-Jul-2021 15:17:34 UTC] PHP Parse error:  syntax error, unexpected ':', expecting ')' in /home/sisthel/public_html/demo.sisthel.pe/api/v1/customer_filter/clients.php on line 8
+[13-Jul-2021 15:18:14 UTC] PHP Parse error:  syntax error, unexpected ':' in /home/sisthel/public_html/demo.sisthel.pe/api/v1/customer_filter/clients.php on line 8
+[13-Jul-2021 15:19:17 UTC] PHP Parse error:  syntax error, unexpected ':', expecting ')' in /home/sisthel/public_html/demo.sisthel.pe/api/v1/customer_filter/clients.php on line 8
+[13-Jul-2021 15:19:32 UTC] PHP Parse error:  syntax error, unexpected ':', expecting ')' in /home/sisthel/public_html/demo.sisthel.pe/api/v1/customer_filter/clients.php on line 8
+[13-Jul-2021 15:19:40 UTC] PHP Parse error:  syntax error, unexpected ':', expecting ')' in /home/sisthel/public_html/demo.sisthel.pe/api/v1/customer_filter/clients.php on line 8
+[13-Jul-2021 15:22:37 UTC] PHP Parse error:  syntax error, unexpected '.' in /home/sisthel/public_html/demo.sisthel.pe/api/v1/customer_filter/clients.php on line 8
+[25-Nov-2021 02:56:13 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method ApiClients::error() in /home/sisthel/public_html/erpmax.sisthel.pe/api/v1/customer_filter/index.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/sisthel/public_html/erpmax.sisthel.pe/api/v1/customer_filter/index.php on line 14
+[25-Nov-2021 03:06:54 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method ApiClients::error() in /home/sisthel/public_html/erpmax.sisthel.pe/api/v1/customer_filter/index.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/sisthel/public_html/erpmax.sisthel.pe/api/v1/customer_filter/index.php on line 14
+[07-Dec-2021 14:19:08 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method ApiClients::error() in /home/sisthel/public_html/erpmax.sisthel.pe/api/v1/customer_filter/index.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/sisthel/public_html/erpmax.sisthel.pe/api/v1/customer_filter/index.php on line 14
+[07-Dec-2021 14:19:52 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method ApiClients::error() in /home/sisthel/public_html/erpmax.sisthel.pe/api/v1/customer_filter/index.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/sisthel/public_html/erpmax.sisthel.pe/api/v1/customer_filter/index.php on line 14
+[07-Dec-2021 14:22:17 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method ApiClients::error() in /home/sisthel/public_html/erpmax.sisthel.pe/api/v1/customer_filter/index.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/sisthel/public_html/erpmax.sisthel.pe/api/v1/customer_filter/index.php on line 14

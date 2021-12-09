@@ -1,0 +1,12 @@
+[21-Nov-2020 18:56:19 UTC] PHP Parse error:  syntax error, unexpected '$item' (T_VARIABLE) in /home/sisthel/public_html/demo.sisthel.pe/api/v1/product/apiproduct.php on line 19
+[21-Nov-2020 18:56:33 UTC] PHP Parse error:  syntax error, unexpected '$item' (T_VARIABLE) in /home/sisthel/public_html/demo.sisthel.pe/api/v1/product/apiproduct.php on line 19
+[21-Nov-2020 18:57:05 UTC] PHP Parse error:  syntax error, unexpected '$item' (T_VARIABLE) in /home/sisthel/public_html/demo.sisthel.pe/api/v1/product/apiproduct.php on line 19
+[21-Nov-2020 18:58:22 UTC] PHP Parse error:  syntax error, unexpected ''id'' (T_CONSTANT_ENCAPSED_STRING), expecting variable (T_VARIABLE) in /home/sisthel/public_html/demo.sisthel.pe/api/v1/product/apiproduct.php on line 7
+[21-Nov-2020 18:58:58 UTC] PHP Parse error:  syntax error, unexpected ')', expecting variable (T_VARIABLE) in /home/sisthel/public_html/demo.sisthel.pe/api/v1/product/apiproduct.php on line 7
+[21-Nov-2020 19:00:14 UTC] PHP Parse error:  syntax error, unexpected ')', expecting variable (T_VARIABLE) in /home/sisthel/public_html/demo.sisthel.pe/api/v1/product/apiproduct.php on line 7
+[21-Nov-2020 19:09:43 UTC] PHP Fatal error:  Uncaught Error: Call to a member function execute() on bool in /home/sisthel/public_html/demo.sisthel.pe/api/v1/product/product.php:9
+Stack trace:
+#0 /home/sisthel/public_html/demo.sisthel.pe/api/v1/product/apiproduct.php(13): Product->obterProduct('000057')
+#1 /home/sisthel/public_html/demo.sisthel.pe/api/v1/product/index.php(8): ApiProduct->getOne('000057')
+#2 {main}
+  thrown in /home/sisthel/public_html/demo.sisthel.pe/api/v1/product/product.php on line 9

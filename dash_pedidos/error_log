@@ -1,0 +1,37 @@
+[13-Jul-2021 19:57:24 UTC] PHP Notice:  Undefined variable: filial in /home/sisthel/public_html/demo.sisthel.pe/api/v1/dashboard/index.php on line 8
+[13-Jul-2021 19:57:24 UTC] PHP Notice:  Undefined variable: vendedor in /home/sisthel/public_html/demo.sisthel.pe/api/v1/dashboard/index.php on line 8
+[13-Jul-2021 19:58:17 UTC] PHP Notice:  Undefined variable: filial in /home/sisthel/public_html/demo.sisthel.pe/api/v1/dashboard/index.php on line 8
+[13-Jul-2021 19:58:17 UTC] PHP Notice:  Undefined variable: vendedor in /home/sisthel/public_html/demo.sisthel.pe/api/v1/dashboard/index.php on line 8
+[13-Jul-2021 19:59:23 UTC] PHP Parse error:  syntax error, unexpected ':' in /home/sisthel/public_html/demo.sisthel.pe/api/v1/dashboard/api_pedidos_x_vendedor.php on line 16
+[13-Jul-2021 20:00:35 UTC] PHP Notice:  Undefined variable: filial in /home/sisthel/public_html/demo.sisthel.pe/api/v1/dashboard/index.php on line 8
+[13-Jul-2021 20:00:35 UTC] PHP Notice:  Undefined variable: vendedor in /home/sisthel/public_html/demo.sisthel.pe/api/v1/dashboard/index.php on line 8
+[13-Jul-2021 20:01:11 UTC] PHP Notice:  Undefined variable: filial in /home/sisthel/public_html/demo.sisthel.pe/api/v1/dashboard/index.php on line 8
+[13-Jul-2021 20:01:11 UTC] PHP Notice:  Undefined variable: vendedor in /home/sisthel/public_html/demo.sisthel.pe/api/v1/dashboard/index.php on line 8
+[13-Jul-2021 20:01:14 UTC] PHP Notice:  Undefined variable: filial in /home/sisthel/public_html/demo.sisthel.pe/api/v1/dashboard/index.php on line 8
+[13-Jul-2021 20:01:14 UTC] PHP Notice:  Undefined variable: vendedor in /home/sisthel/public_html/demo.sisthel.pe/api/v1/dashboard/index.php on line 8
+[13-Jul-2021 20:03:00 UTC] PHP Notice:  Undefined variable: filial in /home/sisthel/public_html/demo.sisthel.pe/api/v1/dashboard/index.php on line 8
+[13-Jul-2021 20:03:00 UTC] PHP Notice:  Undefined variable: vendedor in /home/sisthel/public_html/demo.sisthel.pe/api/v1/dashboard/index.php on line 8
+[13-Jul-2021 20:03:46 UTC] PHP Notice:  Undefined variable: filial in /home/sisthel/public_html/demo.sisthel.pe/api/v1/dashboard/index.php on line 8
+[13-Jul-2021 20:03:46 UTC] PHP Notice:  Undefined variable: vendedor in /home/sisthel/public_html/demo.sisthel.pe/api/v1/dashboard/index.php on line 8
+[13-Jul-2021 20:03:51 UTC] PHP Notice:  Undefined variable: filial in /home/sisthel/public_html/demo.sisthel.pe/api/v1/dashboard/index.php on line 8
+[13-Jul-2021 20:03:51 UTC] PHP Notice:  Undefined variable: vendedor in /home/sisthel/public_html/demo.sisthel.pe/api/v1/dashboard/index.php on line 8
+[13-Jul-2021 20:04:26 UTC] PHP Notice:  Undefined index: B3_VENDEDOR in /home/sisthel/public_html/demo.sisthel.pe/api/v1/dashboard/api_pedidos_x_vendedor.php on line 19
+[13-Jul-2021 20:04:26 UTC] PHP Notice:  Undefined index: A3_NOME in /home/sisthel/public_html/demo.sisthel.pe/api/v1/dashboard/api_pedidos_x_vendedor.php on line 20
+[13-Jul-2021 20:04:26 UTC] PHP Notice:  Undefined index: B3_TOTAL in /home/sisthel/public_html/demo.sisthel.pe/api/v1/dashboard/api_pedidos_x_vendedor.php on line 21
+[13-Jul-2021 20:05:04 UTC] PHP Notice:  Undefined index: A3_NOME in /home/sisthel/public_html/demo.sisthel.pe/api/v1/dashboard/api_pedidos_x_vendedor.php on line 20
+[13-Jul-2021 20:05:04 UTC] PHP Notice:  Undefined index: B3_TOTAL in /home/sisthel/public_html/demo.sisthel.pe/api/v1/dashboard/api_pedidos_x_vendedor.php on line 21
+[13-Jul-2021 20:48:24 UTC] PHP Notice:  A non well formed numeric value encountered in /home/sisthel/public_html/demo.sisthel.pe/api/v1/dashboard/pedidos_x_vendedor.php on line 13
+[13-Jul-2021 20:48:24 UTC] PHP Notice:  A non well formed numeric value encountered in /home/sisthel/public_html/demo.sisthel.pe/api/v1/dashboard/pedidos_x_vendedor.php on line 14
+[13-Jul-2021 20:49:31 UTC] PHP Notice:  Undefined variable: fecha_ant in /home/sisthel/public_html/demo.sisthel.pe/api/v1/dashboard/pedidos_x_vendedor.php on line 23
+[13-Jul-2021 20:50:17 UTC] PHP Notice:  Undefined variable: fecha_ant in /home/sisthel/public_html/demo.sisthel.pe/api/v1/dashboard/pedidos_x_vendedor.php on line 23
+[13-Jul-2021 20:50:33 UTC] PHP Parse error:  syntax error, unexpected 'day' (T_STRING), expecting ')' in /home/sisthel/public_html/demo.sisthel.pe/api/v1/dashboard/pedidos_x_vendedor.php on line 10
+[13-Jul-2021 20:50:52 UTC] PHP Notice:  Undefined variable: fecha_ant in /home/sisthel/public_html/demo.sisthel.pe/api/v1/dashboard/pedidos_x_vendedor.php on line 23
+[13-Jul-2021 20:52:15 UTC] PHP Notice:  Undefined variable: fecha_ant in /home/sisthel/public_html/demo.sisthel.pe/api/v1/dashboard/pedidos_x_vendedor.php on line 23
+[13-Jul-2021 20:52:31 UTC] PHP Notice:  Undefined variable: fecha_ant in /home/sisthel/public_html/demo.sisthel.pe/api/v1/dashboard/pedidos_x_vendedor.php on line 23
+[13-Jul-2021 20:52:56 UTC] PHP Notice:  Undefined variable: fecha_ant in /home/sisthel/public_html/demo.sisthel.pe/api/v1/dashboard/pedidos_x_vendedor.php on line 23
+[15-Jul-2021 21:08:59 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method ApiPedidosVendedor::error() in /home/sisthel/public_html/demo.sisthel.pe/api/v1/dash_pedidos/index.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/sisthel/public_html/demo.sisthel.pe/api/v1/dash_pedidos/index.php on line 16
+[15-Jul-2021 23:38:05 UTC] PHP Parse error:  syntax error, unexpected '$sql' (T_VARIABLE) in /home/sisthel/public_html/demo.sisthel.pe/api/v1/dash_pedidos/pedidos_x_vendedor.php on line 15
+[15-Jul-2021 23:38:51 UTC] PHP Parse error:  syntax error, unexpected '$sql' (T_VARIABLE) in /home/sisthel/public_html/demo.sisthel.pe/api/v1/dash_pedidos/pedidos_x_vendedor.php on line 15

@@ -1,0 +1,33 @@
+<?php
+
+include_once 'stock.php';
+
+class ApiStock{
+
+    function getStock($filial,$producto,$local){
+    	
+        $stock = new Stock();
+        $stocks = array();
+        $stocks["items"] = array();
+
+        $res = $stock->obterStock($filial,$producto,$local);
+
+        if($res->rowCount() >= 1){
+        	
+            $row = $res->fetch();
+    
+            $item=array(
+            	"saldo" => $row['E2_QATU'],
+						);
+            
+            array_push($stocks["items"], $item);
+        
+            echo json_encode($stocks);
+        }else{
+            echo json_encode(array('mensaje' => '401'));
+        }
+    }
+        
+}
+
+?>

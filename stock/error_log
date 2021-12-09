@@ -1,0 +1,32 @@
+[05-Mar-2021 19:07:46 UTC] PHP Notice:  Undefined variable: product in /home/sisthel/public_html/demo.sisthel.pe/api/stock/apistock.php on line 13
+[05-Mar-2021 19:07:46 UTC] PHP Fatal error:  Uncaught Error: Call to a member function obterStock() on null in /home/sisthel/public_html/demo.sisthel.pe/api/stock/apistock.php:13
+Stack trace:
+#0 /home/sisthel/public_html/demo.sisthel.pe/api/stock/index.php(13): ApiStock->getStock('04', '01', '000001', '01')
+#1 {main}
+  thrown in /home/sisthel/public_html/demo.sisthel.pe/api/stock/apistock.php on line 13
+[05-Mar-2021 19:48:16 UTC] PHP Notice:  Undefined variable: product in /home/sisthel/public_html/demo.sisthel.pe/api/stock/apistock.php on line 13
+[05-Mar-2021 19:48:16 UTC] PHP Fatal error:  Uncaught Error: Call to a member function obterStock() on null in /home/sisthel/public_html/demo.sisthel.pe/api/stock/apistock.php:13
+Stack trace:
+#0 /home/sisthel/public_html/demo.sisthel.pe/api/stock/index.php(13): ApiStock->getStock('04', '01', '000001', '01')
+#1 {main}
+  thrown in /home/sisthel/public_html/demo.sisthel.pe/api/stock/apistock.php on line 13
+[05-Mar-2021 19:53:46 UTC] PHP Notice:  Undefined variable: product in /home/sisthel/public_html/demo.sisthel.pe/api/stock/apistock.php on line 13
+[05-Mar-2021 19:53:46 UTC] PHP Fatal error:  Uncaught Error: Call to a member function obterStock() on null in /home/sisthel/public_html/demo.sisthel.pe/api/stock/apistock.php:13
+Stack trace:
+#0 /home/sisthel/public_html/demo.sisthel.pe/api/stock/index.php(13): ApiStock->getStock('04', '01', '000001', '01')
+#1 {main}
+  thrown in /home/sisthel/public_html/demo.sisthel.pe/api/stock/apistock.php on line 13
+[05-Mar-2021 19:56:35 UTC] PHP Parse error:  syntax error, unexpected ')', expecting ']' in /home/sisthel/public_html/demo.sisthel.pe/api/stock/stock.php on line 14
+[05-Mar-2021 19:57:19 UTC] PHP Parse error:  syntax error, unexpected ')', expecting ']' in /home/sisthel/public_html/demo.sisthel.pe/api/stock/stock.php on line 14
+[05-Mar-2021 19:59:55 UTC] PHP Parse error:  syntax error, unexpected ')', expecting ']' in /home/sisthel/public_html/demo.sisthel.pe/api/stock/stock.php on line 14
+[05-Mar-2021 20:00:21 UTC] PHP Parse error:  syntax error, unexpected ')', expecting ']' in /home/sisthel/public_html/demo.sisthel.pe/api/stock/stock.php on line 14
+[05-Mar-2021 20:00:30 UTC] PHP Parse error:  syntax error, unexpected ')', expecting ']' in /home/sisthel/public_html/demo.sisthel.pe/api/stock/stock.php on line 14
+[05-Mar-2021 20:01:01 UTC] PHP Parse error:  syntax error, unexpected ')', expecting ']' in /home/sisthel/public_html/demo.sisthel.pe/api/stock/stock.php on line 14
+[05-Mar-2021 20:01:46 UTC] PHP Parse error:  syntax error, unexpected ')', expecting ']' in /home/sisthel/public_html/demo.sisthel.pe/api/stock/stock.php on line 14
+[05-Mar-2021 20:02:17 UTC] PHP Parse error:  syntax error, unexpected ')', expecting ']' in /home/sisthel/public_html/demo.sisthel.pe/api/stock/stock.php on line 14
+[05-Mar-2021 20:05:13 UTC] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in /home/sisthel/public_html/demo.sisthel.pe/api/stock/stock.php on line 13
+[05-Mar-2021 20:05:58 UTC] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in /home/sisthel/public_html/demo.sisthel.pe/api/stock/stock.php on line 13
+[05-Mar-2021 20:06:13 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method ApiStock::error() in /home/sisthel/public_html/demo.sisthel.pe/api/stock/index.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/sisthel/public_html/demo.sisthel.pe/api/stock/index.php on line 17
