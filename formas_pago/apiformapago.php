@@ -36,6 +36,7 @@ class ApiFormaPago{
         }
 
         echo json_encode($formaspago);
+        //echo $formaspago;
 
     }
         
