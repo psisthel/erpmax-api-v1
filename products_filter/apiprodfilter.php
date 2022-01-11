@@ -4,12 +4,12 @@ include_once 'prodfilter.php';
 
 class ApiProdFilter{
 
-    function getProdFilter($id){
+    function getProdFilter($filial,$id) {
     	
         $prod = new ProdFilter();
         $prods = array();
 
-        $res = $prod->obtProdFilter($id);
+        $res = $prod->obtProdFilter($filial,$id);
         
         if($res->rowCount()){
         	

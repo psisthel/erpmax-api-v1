@@ -14,13 +14,15 @@ class ApiPedidos {
         if($res->rowCount()) {
 
             while ($row = $res->fetch(PDO::FETCH_ASSOC)) {
+
+                $fecha_emision = substr($row['B3_DTPEDIDO'],6,2) . '/' . substr($row['B3_DTPEDIDO'],4,2) . '/' . substr($row['B3_DTPEDIDO'],0,4); 
     
                 $item = array(
                     "id" => "200",
                     "codigo" => $row['B3_CODIGO'],
                     "ruc" => $row['B3_CLIENTE'],
                     "cliente" => $row['A1_NOME'],
-                    "emision" => $row['B3_DTPEDIDO'],
+                    "emision" => $fecha_emision,
                     "total" => $row['B3_TOTAL'],
                     "status" => $row['B3_SITUACAO'],
                 );

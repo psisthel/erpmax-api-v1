@@ -3,9 +3,13 @@
 
     $api = new ApiProdFilter();
 
-    if(isset($_GET['id'])){
+    if( isset($_GET['id']) && isset($_GET['filial']) ) {
+    
         $id = $_GET['id'];
-        $api->getProdFilter($id);
+        $filial = $_GET['filial'];
+
+        $api->getProdFilter($filial,$id);
+    
     } else {
         $api->error('El id es incorrecto');
     }

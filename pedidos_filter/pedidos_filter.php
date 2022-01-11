@@ -12,7 +12,7 @@ class PedidosFilter extends DB {
 		$sql .= "    ON B3.B3_CLIENTE=A1.A1_CODIGO";
 		$sql .= " WHERE B3.B3_FILIAL='". $filial. "'";
 		$sql .= "   AND A1.A1_FILIAL='". $filial. "'";
-		$sql .= "   AND A1.A1_NOME LIKE '%". $nome . "%'";
+		$sql .= "   AND ( A1.A1_NOME LIKE '%". $nome . "%' OR B3.B3_CODIGO LIKE '%". $nome . "%')" ;
 		$sql .= "   AND B3.B3_SITUACAO<>'9'";
 		$sql .= "   AND B3.B3_TOTAL>0";
 		$sql .= " ORDER BY B3.B3_DTPEDIDO DESC";

@@ -13,8 +13,8 @@ class Pedidos extends DB {
 		$sql .= " WHERE B3.B3_FILIAL='". $filial. "'";
 		$sql .= "   AND A1.A1_FILIAL='". $filial. "'";
 		$sql .= "   AND B3.B3_SITUACAO<>'9'";
-		$sql .= "   AND B3.B3_TOTAL>0";
-		$sql .= " ORDER BY B3.B3_DTPEDIDO DESC";
+		//$sql .= "   AND B3.B3_TOTAL>0";
+		$sql .= " ORDER BY B3.B3_CODIGO DESC";
 
 		$query = $this->connect()->prepare($sql);
 

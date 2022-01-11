@@ -36,4 +36,21 @@
 		}
 		return $statement;
    }
+
+  function getToken() {
+
+    echo "Sha1 " . sha1("Afrt$567!kl") . "<br>";
+    echo "Unique " . sha1(uniqid(rand(),true));
+
+    // guardar cookie
+    setcookie("usuario","Percy",time()+(60*60*24*31),"/");
+
+    // ler cookie
+    echo "valor del cookie: " . $_COOKIE['usuario'];
+
+    // limpar cookie
+    setcookie("usuario","",time()-1,"/");
+
+  }
+
  ?>
