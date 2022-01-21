@@ -1,15 +1,15 @@
 <?php
 
-include_once 'pedidosresumo.php';
+include_once 'facturasresumo.php';
 
-class ApiPedidosResumo {
+class ApiFacturasResumo {
 
-    function getPedidosResumo($filial,$id) {
+    function getFacturasResumo($filial,$id) {
     	
-        $pedido = new PedidosResumo();
-        $pedidos = array();
+        $factura = new FacturasResumo();
+        $facturas = array();
 
-        $res = $pedido->obterPedidosResumo($filial,$id);
+        $res = $factura->obterFacturasResumo($filial,$id);
 
         if($res->rowCount()) {
 
@@ -27,17 +27,16 @@ class ApiPedidosResumo {
     
                 $item = array(
                     "id" => "200",
-                    "seq" => $row['B4_SEQ'],
-                    "cod_produto" => $row['B4_PRODUTO'],
+                    "seq" => $row['B7_SEQ'],
+                    "cod_produto" => $row['B7_PRODUTO'],
                     "produto" => $row['A4_DESCRICAO'],
-                    "complemento" => $row['A4_COMPLEMENTO'],
-                    "qtde" => number_format($row['B4_QTDE'],2),
-                    "preco" => number_format($row['B4_PRECO'],2),
-                    "total" => number_format($row['B4_TOTAL'],2),
+                    "qtde" => number_format($row['B7_QTDE'],2),
+                    "preco" => number_format($row['B7_PRECO'],2),
+                    "total" => number_format($row['B7_TOTAL'],2),
                     "url" => $url,
                 );
 
-                array_push($pedidos, $item);
+                array_push($facturas, $item);
             }
         
         } else {
@@ -47,10 +46,10 @@ class ApiPedidosResumo {
                 "mensaje" => "¡No hay elementos!",
             );
 
-            array_push($pedidos, $item);
+            array_push($facturas, $item);
         }
 
-        echo json_encode($pedidos);
+        echo json_encode($facturas);
     }
         
 }

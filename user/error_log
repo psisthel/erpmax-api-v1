@@ -1,4 +1,0 @@
-[02-Apr-2021 04:44:36 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method ApiUser::error() in /home/sisthel/public_html/demo.sisthel.pe/api/v1/user/index.php:10
-Stack trace:
-#0 {main}
-  thrown in /home/sisthel/public_html/demo.sisthel.pe/api/v1/user/index.php on line 10
