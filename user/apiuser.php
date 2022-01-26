@@ -41,6 +41,7 @@ class ApiUser{
                     "passw" => $row['A0_PASSW'],
                     "seriebol" => $row['A0_SERAPPBOL'],
                     "seriefac" => $row['A0_SERAPPFAC'],
+                    "pagfaq" => $row['A0_PAGFAQ'],
                 );
 
                 $users['error'] = false;
