@@ -18,7 +18,7 @@ class ApiGroupsMax{
                 if(empty($row['AA_IMAGEM'])) {
                     $img = "https://demo.sisthel.pe/imagens/no_disponible.png";
                 } else {
-                    $img = $row['AA_IMAGEM'];
+                    $img = 'https://erpmax.sisthel.pe/_lib/file/img/' . trim($row['AA_IMAGEM']);
                 }
 
                 $item = array(

@@ -18,7 +18,9 @@ class ApiProducts {
                 $item = array(
                     "id" => "200",
                     "codigo" => $row['A4_CODIGO'],
+                    "referencia" => trim($row['A4_REFERENCIA']),
                     "descricao" => $row['A4_DESCRICAO'],
+                    "complemento" => trim($row['A4_COMPLEMENTO']),
                     "prc_unitario" => $row['A4_PRECO'],
                     "prc_mayor" => $row['A4_PRCMAYOR'],
                     "prc_caja" => $row['A4_PRCCAJA'],

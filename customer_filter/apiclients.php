@@ -20,8 +20,10 @@ class ApiClients{
 
                 if(is_null($row['A1_CPFCGC']) || empty($row['A1_CPFCGC']) ) {
                     $documento = $row['A1_RG'];
+                    $tipo = "F";
                 } else {
                     $documento = $row['A1_CPFCGC'];
+                    $tipo = "J";
                 }
                 
                 if(is_null($row['A1_TELEFONE']) || empty($row['A1_TELEFONE']) ) {
@@ -39,6 +41,7 @@ class ApiClients{
                     "documento" => $documento,
                     "telefono" => $telefone,
                     "email" => trim($row['A1_EMAIL']),
+                    "tipo" => $tipo,
                 );
             
             	array_push($clients, $item);

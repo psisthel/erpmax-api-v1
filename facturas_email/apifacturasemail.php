@@ -2,20 +2,19 @@
 
 include_once 'facturasemail.php';
 
-// $servername = "107.180.46.150";
-// $username = "sisthel_prd";
-// $password = "dRfg5WcrVbA6";
-// $dbname = "sisthel_prd";
-
-
 class ApiFacturasEmail {
 
     function getFacturasEmail($filial,$docid) {
 
         $servername = "107.180.46.150";
-        $username = "demo_pe";
-        $password = "d5xkWMc@WGly";
-        $dbname = "erpmax_demo_pe";
+        $username = "sisthel_prd";
+        $password = "dRfg5WcrVbA6";
+        $dbname = "sisthel_prd";
+
+        // $servername = "107.180.46.150";
+        // $username = "demo_pe";
+        // $password = "d5xkWMc@WGly";
+        // $dbname = "erpmax_demo_pe";
 
         $conn = new mysqli($servername, $username, $password, $dbname);
 

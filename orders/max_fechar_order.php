@@ -1,9 +1,14 @@
 <?php
 
+// $servername = "107.180.46.150";
+// $username = "demo_pe";
+// $password = "d5xkWMc@WGly";
+// $dbname = "erpmax_demo_pe";
+
 $servername = "107.180.46.150";
-$username = "demo_pe";
-$password = "d5xkWMc@WGly";
-$dbname = "erpmax_demo_pe";
+$username = "sisthel_prd";
+$password = "dRfg5WcrVbA6";
+$dbname = "sisthel_prd";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 

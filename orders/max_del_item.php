@@ -1,15 +1,17 @@
 <?php
 
-    $servername = "107.180.46.150";
-    $username = "demo_pe";
-    $password = "d5xkWMc@WGly";
-    $dbname = "erpmax_demo_pe";
+    include_once('max_funciones_extras.php');
 
     // $servername = "107.180.46.150";
-    // $username = "sisthel_prd";
-    // $password = "dRfg5WcrVbA6";
-    // $dbname = "sisthel_prd";
-    
+    // $username = "demo_pe";
+    // $password = "d5xkWMc@WGly";
+    // $dbname = "erpmax_demo_pe";
+
+    $servername = "107.180.46.150";
+    $username = "sisthel_prd";
+    $password = "dRfg5WcrVbA6";
+    $dbname = "sisthel_prd";
+
     $conn = new mysqli($servername, $username, $password, $dbname);
 
     if (mysqli_connect_errno()) {
@@ -37,18 +39,37 @@
             $precio = $ores_b4['B4_PRECO'];
             $local = $ores_b4['B4_LOCAL'];
 
+            /*
+            $ksql  = "UPDATE pb4990 SET B4_SITUACAO='9'"; 
+            $ksql .= " WHERE B4_FILIAL='" . $filial . "'";
+            $ksql .= "   AND B4_CODIGO='" . $orden . "'";
+            $ksql .= "   AND B4_SEQ=" . $item . "";
+            $ksql .= "   AND B4_PRODUTO='" . $produto . "'";
+            */
+            
             $ksql  = "DELETE FROM pb4990"; 
             $ksql .= " WHERE B4_FILIAL='" . $filial . "'";
             $ksql .= "   AND B4_CODIGO='" . $orden . "'";
             $ksql .= "   AND B4_SEQ=" . $item . "";
             $ksql .= "   AND B4_PRODUTO='" . $produto . "'";
-    
+            
             if ($conn->query($ksql) === TRUE) {
 
-                $item = array(
-                    "estado" => "200",
-                    "msg" => "¡item borrrado con exito!",
-                );
+                if(atualiza_orden($filial,$orden,$produto,$local,'-',$qtde)) {
+                    
+                    $item = array(
+                        "estado" => "200",
+                        "msg" => "¡item actualizado com exito!",
+                    );
+
+                } else {
+
+                    $item = array(
+                        "estado" => "404",
+                        "msg" => "¡error en la actualizacion del orden!",
+                    );
+    
+                }
 
             } else {
 

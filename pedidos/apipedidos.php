@@ -23,7 +23,7 @@ class ApiPedidos {
                     "ruc" => $row['B3_CLIENTE'],
                     "cliente" => $row['A1_NOME'],
                     "emision" => $fecha_emision,
-                    "total" => $row['B3_TOTAL'],
+                    "total" => number_format($row['B3_TOTAL'],2),
                     "status" => $row['B3_SITUACAO'],
                 );
 

@@ -15,6 +15,16 @@ class ApiFacturas {
 
             while ($row = $res->fetch(PDO::FETCH_ASSOC)) {
 
+                $ntotal = $row['B5_TOTAL'];
+
+                if($row['B5_BASEICMS']>0) {
+                    $ntotal = $row['B5_BASEICMS'] + $row['B5_IMPOSTOS'];
+                }
+
+                if($row['B5_BASIMP2']>0) {
+                    $ntotal = $row['B5_BASIMP2'] + $row['B5_VALIMP2'];
+                }
+
                 $fecha_emision = substr($row['B5_EMISSAO'],6,2) . '/' . substr($row['B5_EMISSAO'],4,2) . '/' . substr($row['B5_EMISSAO'],0,4);
 
                 $item = array(
@@ -25,10 +35,11 @@ class ApiFacturas {
                     "pedido" => $row['B5_PEDIDO'],
                     "serie" => $row['B5_SERIE'],
                     "nfiscal" => $row['B5_NFISCAL'],
+                    "enlace" => $row['B5_ENLACEFE'],
                     "emissao" => $fecha_emision,
                     "formapag" => $row['B5_FORMAPAG'],
                     "status" => $row['B5_SITUACAO'],
-                    "total" => number_format($row['B5_TOTAL'],2),
+                    "total" => number_format($ntotal,2),
                 );
 
                 array_push($notas, $item);

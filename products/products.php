@@ -6,7 +6,7 @@ class Products extends DB{
     
     function obterProducts($filial) {
         
-        $query = $this->connect()->query("SELECT * FROM pa4990 WHERE A4_SITUACAO<>'9' AND A4_TIPO='P' AND A4_FILIAL='" . $filial . "'");
+        $query = $this->connect()->query("SELECT * FROM pa4990 WHERE A4_SITUACAO<>'9' AND A4_TIPO='P' AND A4_FILIAL='" . $filial . "' ORDER BY A4_ID DESC");
 
         $query->execute(['filial' => $filial]);
 

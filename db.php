@@ -9,16 +9,16 @@ class DB{
     private $charset;
 
     public function __construct() {
-        // $this->host     = '107.180.46.150';
-        // $this->db       = 'sisthel_prd';
-        // $this->user     = 'sisthel_prd';
-        // $this->password = "dRfg5WcrVbA6";
-        // $this->charset  = 'utf8mb4';
         $this->host     = '107.180.46.150';
-        $this->db       = 'erpmax_demo_pe';
-        $this->user     = 'demo_pe';
-        $this->password = "d5xkWMc@WGly";
+        $this->db       = 'sisthel_prd';
+        $this->user     = 'sisthel_prd';
+        $this->password = "dRfg5WcrVbA6";
         $this->charset  = 'utf8mb4';
+        // $this->host     = '107.180.46.150';
+        // $this->db       = 'erpmax_demo_pe';
+        // $this->user     = 'demo_pe';
+        // $this->password = "d5xkWMc@WGly";
+        // $this->charset  = 'utf8mb4';
 
     }
 

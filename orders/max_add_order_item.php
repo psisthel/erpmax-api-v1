@@ -1,14 +1,16 @@
 <?php
 
-    $servername = "107.180.46.150";
-    $username = "demo_pe";
-    $password = "d5xkWMc@WGly";
-    $dbname = "erpmax_demo_pe";
+    include_once('max_funciones_extras.php');
 
     // $servername = "107.180.46.150";
-    // $username = "sisthel_prd";
-    // $password = "dRfg5WcrVbA6";
-    // $dbname = "sisthel_prd";
+    // $username = "demo_pe";
+    // $password = "d5xkWMc@WGly";
+    // $dbname = "erpmax_demo_pe";
+
+    $servername = "107.180.46.150";
+    $username = "sisthel_prd";
+    $password = "dRfg5WcrVbA6";
+    $dbname = "sisthel_prd";
     
     $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -28,7 +30,7 @@
         // $qtde = $_POST['qtde'];
         $masmenos = $_POST['masmenos'];
 
-        $xsql = "SELECT B4_QTDE,B4_PRECO FROM pb4990 WHERE B4_FILIAL='" . $filial . "' AND B4_CODIGO='" . $orden . "' AND B4_SEQ=" . $item . " AND B4_PRODUTO='" . $produto . "'";
+        $xsql = "SELECT B4_QTDE,B4_PRECO,B4_LOCAL FROM pb4990 WHERE B4_FILIAL='" . $filial . "' AND B4_CODIGO='" . $orden . "' AND B4_SEQ=" . $item . " AND B4_PRODUTO='" . $produto . "'";
         
         $ob4 = $conn->query($xsql);
         $ores_b4 = $ob4->fetch_array(MYSQLI_ASSOC); //O también $resultado->fetch_assoc()
@@ -46,6 +48,7 @@
             }
 
             $precio = $ores_b4['B4_PRECO'];
+            $local = $ores_b4['B4_LOCAL'];
 
             $ntotal = $qtde * $precio;
             $nvalmerc = number_format($precio / 1.18,2);
@@ -58,6 +61,7 @@
 
             $ksql  = "UPDATE pb4990 SET";
             $ksql .= "       B4_QTDE=" . $qtde . ",";
+            $ksql .= "       B4_QTDLIB=" . $qtde . ",";
             $ksql .= "       B4_TOTAL=" . $ntotal . ",";
             $ksql .= "       B4_VALMERC=" . $nvalmerc . ",";
             $ksql .= "       B4_BASIMP2=" . $nbasimp2 . ",";
@@ -69,12 +73,24 @@
     
             if ($conn->query($ksql) === TRUE) {
 
-                $item = array(
-                    "estado" => "200",
-                    "msg" => "¡item modificado con exito!",
-                    "select" => $xsql,
-                    "update" => $ksql,
-                );
+                // -------------------------- //
+                // actualiza PB# - encabezado //
+                // -------------------------- //
+                if(atualiza_orden($filial,$orden,$produto,$local,$masmenos,1)) {
+                            
+                    $item = array(
+                        "estado" => "200",
+                        "msg" => "¡item actualizado com exito (*)!",
+                    );
+
+                } else {
+
+                    $item = array(
+                        "estado" => "404",
+                        "msg" => "¡error en la actualizacion del orden!",
+                    );
+
+                }
 
             } else {
 

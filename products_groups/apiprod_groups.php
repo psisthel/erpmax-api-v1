@@ -27,7 +27,7 @@ class ApiProdGroups{
                 // echo $path;
             
                 if($arquivo) {
-                    $url = 'https://demo.sisthel.pe/_lib/file/img/img-productos/'.$filial.'/prod_'.$row['A4_ID'].'/'.trim($row['A4_URL']);
+                    $url = 'https://erpmax.sisthel.pe/_lib/file/img/img-productos/'.$filial.'/prod_'.$row['A4_ID'].'/'.trim($row['A4_URL']);
                 } else {
                     $url = "https://demo.sisthel.pe/imagens/no_disponible.png";
                 }
@@ -57,7 +57,7 @@ class ApiProdGroups{
                 $item = array(
                     "ret" => "200",
                     "codigo" => $row['A4_CODIGO'],
-                    "descricao" => $row['A4_DESCRICAO'],
+                    "descricao" => trim($row['A4_DESCRICAO']),
                     "prc_unitario" => $row['A4_PRECO'],
                     "prc_mayor" => $row['A4_PRCMAYOR'],
                     "prc_caja" => $row['A4_PRCCAJA'],

@@ -16,9 +16,35 @@ class ApiPedidosResumo {
 
             while ($row = $res->fetch(PDO::FETCH_ASSOC)) {
 
-                $path = "../../../_lib/file/img/img-productos/".$filial."/prod_".$row['A4_ID']."/".trim($row['A4_URL']);
-                $arquivo = file_exists($path);
+                $url = "https://demo.sisthel.pe/_lib/file/img/img-productos/".$filial."/prod_".$row['A4_ID']."/".trim($row['A4_URL']);
+                //$path = "../../../_lib/file/img/img-productos/".$filial."/prod_".$row['A4_ID']."/".trim($row['A4_URL']);
+                //$arquivo = is_file($path);
             
+                //$url = "https://ejemplo.com/una-url-a-comprobar";
+                //$arquivo = url_exists( $path );
+
+                $options['http'] = array(
+                    'method' => "HEAD",
+                    'ignore_errors' => 1,
+                    'max_redirects' => 0
+                );
+        
+                $body = @file_get_contents( $url, NULL, stream_context_create( $options ) );
+                
+                if( isset( $http_response_header ) ) {
+                    sscanf( $http_response_header[0], 'HTTP/%*d.%*d %d', $httpcode );
+             
+                    $accepted_response = array( 200, 301, 302 );
+                    if( in_array( $httpcode, $accepted_response ) ) {
+                        $arquivo = true;
+                    } else {
+                        $arquivo = false;
+                    }
+                 } else {
+                    $arquivo = false;
+                 }
+
+
                 if($arquivo) {
                     $url = 'https://demo.sisthel.pe/_lib/file/img/img-productos/'.$filial.'/prod_'.$row['A4_ID'].'/'.trim($row['A4_URL']);
                 } else {

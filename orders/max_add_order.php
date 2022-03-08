@@ -1,14 +1,16 @@
 <?php
 
-    $servername = "107.180.46.150";
-    $username = "demo_pe";
-    $password = "d5xkWMc@WGly";
-    $dbname = "erpmax_demo_pe";
+    include_once('max_funciones_extras.php');
 
     // $servername = "107.180.46.150";
-    // $username = "sisthel_prd";
-    // $password = "dRfg5WcrVbA6";
-    // $dbname = "sisthel_prd";
+    // $username = "demo_pe";
+    // $password = "d5xkWMc@WGly";
+    // $dbname = "erpmax_demo_pe";
+
+    $servername = "107.180.46.150";
+    $username = "sisthel_prd";
+    $password = "dRfg5WcrVbA6";
+    $dbname = "sisthel_prd";
     
     $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -30,6 +32,7 @@
         $precio = $_POST['precio'];
         $linclui = false;
         $cliente_padrao = '00000000';
+        $local = '01';
 
         $fecha = date("Ymd");
         $status = "0";
@@ -96,26 +99,28 @@
 
         }
 
-        $xsql = "SELECT B4_QTDE,B4_PRECO FROM pb4990 WHERE B4_FILIAL='" . $filial . "' AND B4_CODIGO='" . $xcodigo . "' AND B4_PRODUTO='" . $produto . "'";
+        $xsql = "SELECT B4_QTDE,B4_PRECO,B4_LOCAL FROM pb4990 WHERE B4_FILIAL='" . $filial . "' AND B4_CODIGO='" . $xcodigo . "' AND B4_PRODUTO='" . $produto . "'";
 
         $ob4 = $conn->query($xsql);
         $ores_b4 = $ob4->fetch_array(MYSQLI_ASSOC); //O también $resultado->fetch_assoc()
         
         if ( $ores_b4 != null ) {
 
-            // $row = $ob4->fetch_assoc();
-            $qtde = $ores_b4['B4_QTDE']+1;
+            $qtde_b4 = $ores_b4['B4_QTDE'];
             $precio = $ores_b4['B4_PRECO'];
+            $local = $ores_b4['B4_LOCAL'];
 
-            $ntotal = $qtde * $precio;
-            $nvalmerc = number_format($precio / 1.18,2);
-            $nbasimp2 = number_format($ntotal / 1.18,2);
-            $nvalimp2 = number_format($ntotal - $nbasimp2,2);
+            $qtde_b4 = $qtde_b4 + $qtde; 
+            $ntotal = $qtde_b4 * $precio;
+            $nvalmerc = str_replace(",","",number_format($precio / 1.18,2));
+            $nbasimp2 = str_replace(",","",number_format($ntotal / 1.18,2));
+            $nvalimp2 = str_replace(",","",number_format($ntotal - $nbasimp2,2));
             $nalqimp2 = 18.00;
             $ccodimp2 = '002';
 
             $ksql  = "UPDATE pb4990 SET";
-            $ksql .= "       B4_QTDE=" . $qtde . ",";
+            $ksql .= "       B4_QTDE=" . $qtde_b4 . ",";
+            $ksql .= "       B4_QTDLIB=" . $qtde_b4 . ",";
             $ksql .= "       B4_TOTAL=" . $ntotal . ",";
             $ksql .= "       B4_VALMERC=" . $nvalmerc . ",";
             $ksql .= "       B4_BASIMP2=" . $nbasimp2 . ",";
@@ -155,9 +160,9 @@
             }
 
             $ntotal = $qtde * $precio;
-            $nvalmerc = number_format($precio / 1.18,2);
-            $nbasimp2 = number_format($ntotal / 1.18,2);
-            $nvalimp2 = number_format($ntotal - $nbasimp2,2);
+            $nvalmerc = str_replace(",","",number_format($precio / 1.18,2));
+            $nbasimp2 = str_replace(",","",number_format($ntotal / 1.18,2));
+            $nvalimp2 = str_replace(",","",number_format($ntotal - $nbasimp2,2));
             $nalqimp2 = 18.00;
             $ccodimp2 = '002';
 
@@ -188,7 +193,7 @@
             $sql .= $precio . ","; 
             $sql .= $ntotal . ",'";
             $sql .= "515" . "','";
-            $sql .= "01" . "',";
+            $sql .= $local . "',";
             $sql .= $qtde . ",'";
             $sql .= "0" . "','";
             $sql .= "S" . "','";
@@ -203,8 +208,9 @@
 
                 $item = array(
                     "estado" => "200",
-                    "msg" => "¡item incluido con exito!",
+                    "msg" => "¡item incluido con exito (1)!",
                     "order" => $xcodigo,
+                    // "sql" => $sql,
                 );
 
             } else {
@@ -212,6 +218,8 @@
                 $item = array(
                     "estado" => "404",
                     "msg" => "¡error en la inclusion del item!",
+                    "order" => $xcodigo,
+                    // "sql" => $sql,
                 );
 
             }
@@ -221,7 +229,25 @@
 
         }
 
-        //$ores_b4->free();
+        // -------------------------- //
+        // actualiza PB# - encabezado //
+        // -------------------------- //
+        if(atualiza_orden($filial,$xcodigo,$produto,$local,'+',$qtde)) {
+                    
+            $item = array(
+                "estado" => "200",
+                "msg" => "¡item actualizado com exito (2)!",
+                "order" => $xcodigo,
+            );
+
+        } else {
+
+            $item = array(
+                "estado" => "404",
+                "msg" => "¡error en la actualizacion del orden!",
+            );
+
+        }
 
         array_push($respuesta, $item);
         echo json_encode($respuesta);

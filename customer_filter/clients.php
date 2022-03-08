@@ -6,7 +6,7 @@ class Clients extends DB{
     
     function obtClients($filial,$id){
 
-        $sql = "SELECT * FROM pa1990 WHERE A1_FILIAL='" . $filial . "' AND A1_SITUACAO<>'9' AND A1_NOME LIKE '%". $id ."%' ORDER BY A1_ID";
+        $sql = "SELECT * FROM pa1990 WHERE A1_FILIAL='" . $filial . "' AND A1_SITUACAO<>'9' AND A1_NOME LIKE '%". $id ."%' ORDER BY A1_ID DESC";
 
         $query = $this->connect()->prepare($sql);
 
